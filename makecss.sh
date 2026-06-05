@@ -91,6 +91,7 @@ while getopts ${optionstrings} opt; do
             touch "${filename}/js/main.js"
             echo "${CSSFILE}" > "${filename}/css/main.css"
             echo "${HTMLFILE}" > "${filename}/index.php"
+            perl -pi -e 's|href="main.css"|href="css/main.css"|g' "${filename}/index.php"
             ;;
         *)
             echo "Invalid option: -${OPTARG}" >&2
