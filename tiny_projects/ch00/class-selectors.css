@@ -70,3 +70,7 @@ header + p::first-letter {
 [lang="en"]::before {
     content: "🇬🇧 ";
 }
+
+* {
+    font-family: sans-serif;
+}
