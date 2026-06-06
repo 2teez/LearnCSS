@@ -40,15 +40,16 @@ article p span:nth-child(2) {
     text-indent: 16px;
 }
 
-main {
-    display: grid;
-    grid-template-columns: 1fr 1fr 2fr;
-    grid-template-areas:
-        "header header header"
-        "content content author"
-        "content content aside"
-        "plays      .    aside"
-        "footer footer footer";
+@media (min-width: 955px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+            "header header header"
+            "content author aside"
+            "content plays aside"
+            "footer footer footer";
+    }
 }
 
 header {
