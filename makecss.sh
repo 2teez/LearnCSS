@@ -31,7 +31,7 @@ HTMLFILE="
 
         <!-- CSS -->
         <link
-            href=\"${filename##.*}.css\" text=\"text/css\" rel=\"stylesheet\"
+            rel=\"stylesheet\" text=\"text/css\" href=\"${filename##.*}.css\"
         >
     </head>
     <body>
@@ -81,7 +81,7 @@ while getopts ${optionstrings} opt; do
             echo "Creating generic css file with html file with default content..."
             filename="${OPTARG}"
             echo "${CSSFILE}" > "${filename##.*}.css"
-            echo "${HTMLFILE}" > "${filename##.*}.php"
+            echo "${HTMLFILE}" > "${filename##.*}.html"
             ;;
         p)
             echo "Creating project ${OPTARG}..."
@@ -90,8 +90,8 @@ while getopts ${optionstrings} opt; do
 
             touch "${filename}/js/main.js"
             echo "${CSSFILE}" > "${filename}/css/main.css"
-            echo "${HTMLFILE}" > "${filename}/index.php"
-            perl -pi -e 's|href="main.css"|href="css/main.css"|g' "${filename}/index.php"
+            echo "${HTMLFILE}" > "${filename}/index.html"
+            perl -pi -e 's|href="main.css"|href="css/main.css"|g' "${filename}/index.html"
             ;;
         *)
             echo "Invalid option: -${OPTARG}" >&2
